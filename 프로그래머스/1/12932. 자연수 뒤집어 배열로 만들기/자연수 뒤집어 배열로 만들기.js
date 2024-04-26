@@ -1,9 +1,7 @@
 function solution(n) {
     var answer = [];
     
-    answer = (n+'').split('').reverse();
-    for(let i=0; i<answer.length; i++)
-        answer[i] = parseInt(answer[i]);
+    answer = (n+'').split('').reverse().map(num => parseInt(num));
 
     return answer;
 }
