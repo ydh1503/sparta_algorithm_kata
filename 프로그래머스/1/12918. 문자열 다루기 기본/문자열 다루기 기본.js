@@ -10,7 +10,7 @@ function solution(s) {
                 break;
             }
     }
-    console.log(typeof(+'a'));
-    console.log(Number.isInteger(+'a'));
+    // console.log(typeof(+'a'));
+    // console.log(Number.isInteger(+'a'));
     return answer;
 }
