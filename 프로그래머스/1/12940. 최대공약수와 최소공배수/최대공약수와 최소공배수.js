@@ -26,14 +26,14 @@ function getGCD(n, m){
     const mPrime = getPrimeFactors(m); 
     let result = 1;
     
-    nPrime.forEach(e1 => {
+    nPrime.forEach(e_n => {
         if(mPrime.length < 1)
             return result;
         
-        let i = mPrime.findIndex(e2 => e2 === e1);
+        let i = mPrime.findIndex(e_m => e_m === e_n);
         
         if(i !== -1){
-            result *= e1;
+            result *= e_n;
             mPrime.splice(0,i+1);
         }
     });
