@@ -1,18 +1,20 @@
 function solution(nums) {
-    const sum = [];
+    //const sum = [];
     let count = 0;
     
     for(let i=0; i<nums.length-2; i++){
         for(let j=i+1; j<nums.length-1; j++){
             for(let k=j+1; k<nums.length; k++){
-                sum.push(nums[i]+nums[j]+nums[k]);
+                //sum.push(nums[i]+nums[j]+nums[k]);
+                if(isPrime(nums[i]+nums[j]+nums[k]))
+                    count++;
             }
         }
     }
     
-    for(let i=0; i<sum.length; i++){
-        if(isPrime(sum[i])) count++;
-    }
+    // for(let i=0; i<sum.length; i++){
+    //     if(isPrime(sum[i])) count++;
+    // }
     
     return count;
 }
