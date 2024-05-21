@@ -21,8 +21,7 @@ function solution(n, lost, reserve) {
         for(let j = 0; j<reserve.length; j++){
             if(reserve[j] === i-1 || reserve[j] === i+1){
                 answer++;
-                //reserve.splice(j,1);
-                reserve[j] = -1;
+                reserve.splice(j,1);
                 break;
             }
         }
