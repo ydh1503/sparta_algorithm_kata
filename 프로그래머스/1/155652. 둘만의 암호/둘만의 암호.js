@@ -13,8 +13,7 @@ function solution(s, skip, index) {
             if(!skip.includes(String.fromCharCode(tmp))){
                 j++;
             } 
-        }
-        
+        }   
         answer += String.fromCharCode(tmp);
     }
     
