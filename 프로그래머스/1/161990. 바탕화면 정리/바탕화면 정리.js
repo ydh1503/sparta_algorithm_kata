@@ -8,14 +8,14 @@ function solution(wallpaper) {
             if(wallpaper[i][j] === '#'){
                 if(lux> i) lux = i;
                 if(luy> j) luy = j;
-                if(rdx< i+1) rdx = i+1;
-                if(rdy< j+1) rdy = j+1;
+                if(rdx< i) rdx = i;
+                if(rdy< j) rdy = j;
             }
         }
     }
     answer.push(lux);
     answer.push(luy);
-    answer.push(rdx);
-    answer.push(rdy);
+    answer.push(rdx+1);
+    answer.push(rdy+1);
     return answer;
 }
