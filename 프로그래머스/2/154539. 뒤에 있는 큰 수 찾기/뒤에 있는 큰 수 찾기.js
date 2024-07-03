@@ -20,18 +20,13 @@ function solution(numbers) {
 //     }
     
     const index = [];
-    let min = 1000001;
     
     for(let i=0; i<numbers.length; i++){
-        if(numbers[i]>min){
-            for(let j=index.length-1; j>=0; j--){
-                if(numbers[i]>numbers[index[j]]){
-                    answer[index[j]] = numbers[i];
-                    index.pop();
-                } else break;
-            }
-        } else{
-            min = numbers[i];
+        for(let j=index.length-1; j>=0; j--){
+            if(numbers[i]>numbers[index[j]]){
+                answer[index[j]] = numbers[i];
+                index.pop();
+            } else break;
         }
         index.push(i);
     }
