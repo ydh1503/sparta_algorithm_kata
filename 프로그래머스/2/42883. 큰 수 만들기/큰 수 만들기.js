@@ -18,50 +18,25 @@
 //     return answer;
 // }
 
-// function solution(number, k) {
-//     var answer = '';
-//     let str = number;
-    
-//     for (let i = number.length - k; i > 0; i--) {
-//         const scope = str.length - i + 1;
-//         let maxNum = '0';
-//         let maxIndex = 0;
-        
-//         for (let j = 0; j < scope; j++) {
-//             if (str[j] > maxNum) {
-//                 maxNum = str[j];
-//                 maxIndex = j;
-//             }
-//         }
-        
-//         str = str.slice(maxIndex + 1);
-//         answer += maxNum;
-//     }
-    
-//     return answer;
-// }
-
 function solution(number, k) {
-    let stack = [];
+    var answer = '';
+    const stack = [];
     let count = 0;
-
-    for (let i = 0; i < number.length; i++) {
-        const current = number[i];
-
-        while (count < k && stack.length > 0 && stack[stack.length - 1] < current) {
+    
+    for(let i=0; i<number.length; i++){
+        while(stack.length && stack[stack.length-1] < number[i] && count<k){
             stack.pop();
             count++;
         }
-
-        stack.push(current);
+        if(count === k){
+            answer = stack.join('')+number.slice(i);
+            break;
+        }
+        stack.push(number[i]);
     }
-
-    // 남은 k만큼 뒤에서부터 제거
-    while (count < k) {
-        stack.pop();
-        count++;
+    if(count<k){
+        stack.splice(-(k-count));
+        answer = stack.join('');
     }
-
-    // 필요한 길이만큼만 반환
-    return stack.slice(0, number.length - k).join('');
+    return answer;
 }
