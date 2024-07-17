@@ -19,7 +19,6 @@ function solution(n) {
         routine %= 3;
         n--;
     }
-    console.log(snail);
     answer = snail.reduce((acc,cur)=>[...acc,...cur],[]);
     
     return answer;
